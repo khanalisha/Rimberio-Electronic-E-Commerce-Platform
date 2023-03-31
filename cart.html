@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>smart phone</title>
+    <title>Document</title>
     <style>
-        /* nav bar*/
         * {
             box-sizing: border-box;
         }
@@ -195,57 +194,46 @@
             background-color: #4338CA;
         }
 
-        /* #slideshow {
-            width: 500px;
-        }
 
-        #slideshow img {
-            width: 400%;
-        } */
 
-        /* middle section */
 
-        #container {
-            /* border: 2px solid red; */
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            justify-content: space-between;
-            padding-left: 5px;
-            padding-right: 5px;
-            margin-left: 5px;
-            margin-right: 5px;
-            padding-top: 30px;
-            margin-top: 30px;
+        /* cart css */
 
+        #top {
+            border: 1px solid black;
+            margin-top: 50px;
+            margin-left: 12px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
         }
 
-        #container>div {
-            padding-left: 5px;
-            padding-right: 5px;
-            margin-left: 5px;
-            margin-right: 5px;
+        #total #total h1 {
+            font-weight: 600;
+        }
 
+        #audioContainer div {
+            /* border: 1px solid red; */
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         }
 
         img {
-            width: 200px;
-        }
-
-        /* #ViewBtn{
-            border: 3px solid red;
-            position:absolute;
-            top: -3; 
+            width: 100%;
 
         }
-        #ViewBtn button {
-            background-color:#4338CA;
-            color: #f0f8ff;
-            height: 22px;
-            border-radius: 8%;
-            border-color: #4338CA;
-        } */
+
+        p {
+            display: block;
+        }
+
+
+        h5,
+        h6 {
+            margin: 1px;
+            padding: 1px;
+
+
+        }
+
         button {
             display: block;
             font-size: 20px;
@@ -253,9 +241,23 @@
             /* border: 0; */
             border-radius: 5px;
             margin: 5px auto;
-            background-color: #e01e1e;
-            border-color: #f00f0f;
-            color: #fff;
+        }
+
+        * {
+            font-size: 100%;
+            font-weight: 500;
+        }
+
+        #audioContainer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+        }
+
+        #audioContainer div {
+            margin: 10px;
+            padding: 0 10px;
+
 
         }
 
@@ -464,6 +466,8 @@
 
 <body>
 
+    <!-- nav bar -->
+
     <div id="navMain">
         <div id="nav1">
 
@@ -487,7 +491,7 @@
             <div id="side2">
                 <ul>
                     <li><a href="">Select your Pin Code|</a>
-                        <a href="./cart.html">🛒Cart |</a>
+                        <a href="">🛒Cart |</a>
                         <a href="">👤Login |</a>
                     </li>
 
@@ -607,16 +611,14 @@
 
     </div>
 
+    <!-- middle part -->
+    <div id="top">
+        <h1 id="total"> MY Cart Price:- <span id="cart-total">0</span></h1>
+    </div>
+    <div id="audioContainer"></div>
 
 
-
-    <!-- <div id="ViewBtn"> 
-        <h2>Best Camera Mobile</2><button>View all</button> -->
-    <!-- 
-    </div> -->
-    <div id="container"></div>
-
-
+    <!-- footer -->
     <!-- about relience degital -->
     <div id="footer">
         <div id="footerAll">
@@ -751,76 +753,97 @@
 
 </body>
 <script>
-    const ProductData = [
-        {
-            brand: "Motorola G62 5G 128 GB, 6 GB RAM, Midnight Grey, Mobile Phone(493177198)",
-            price: "₹15,999.00",
-            image: "https://www.reliancedigital.in/medias/Motorola-G62-Mobile-Phone-493177198-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w4NTk1NHxpbWFnZS9qcGVnfGltYWdlcy9oMzYvaDE1Lzk4NzMyNjQ5MDIxNzQuanBnfDc5MmFmYTVlODc2MjE2NjE3NzIzZWIxNjkzNGNjY2QxZjA5MDVmMWYzODcyMGFhOGE2YTJkMjQ4MjQxMmY4N2U"
+
+    const all_iteams = document.getElementById("audioContainer");
+    let LSdata = JSON.parse(localStorage.getItem("degitalProduct")) || [];
+    Display_product(LSdata)
 
 
-        },
-        {
-            brand: "OnePlus 10T 5G 128 GB, 8 GB RAM, Moonstone Black, Mobile Phone(493177297)",
-            price: " ₹44,999.00",
-            image: "https://www.reliancedigital.in/medias/One-Plus-10T-Mobile-Phone-493177297-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMjc4NDd8aW1hZ2UvanBlZ3xpbWFnZXMvaDFiL2g4ZS85ODY5OTQ4MTU3OTgyLmpwZ3wwYzZmNTJkN2NmMTgzNDkzNjQ3YzQzNTg1ZWRmODYzMmFiMjhlYmE3ZjcyMzYzNmJmNDEyN2JiZWYzM2UwOGJk",
+
+    function Display_product(data) {
+        all_iteams.innerHTML = "";
+
+        LSdata.forEach((Element, i) => {
+            const card = document.createElement("div");
+
+            const image = document.createElement("img")
+            image.src = Element.image
+
+            const title = document.createElement("p");
+            title.innerText = Element.title;
 
 
-        },
-        {
-            brand: "Oppo A57 64GB, 4GB RAM, Glowing Green, Mobile Phone(492850647)",
-            price: "₹13,999.00",
-            image: "https://www.reliancedigital.in/medias/Oppo-CPH2357-Smart-Phones-492850896-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMjcwODF8aW1hZ2UvanBlZ3xpbWFnZXMvaDZmL2hiOS85ODgyMTY3NzA1NjMwLmpwZ3xmYTIyZWM5MGFkZjc0ZGRjYTBjNzc3MWYxMTZlZDFiZmQ5NzZmNTMzNTY5OWVjZjQxYWE4NjFhOTg3OTQ4N2M0"
+            const brand = document.createElement("h6");
+            brand.innerText = Element.brand;
+
+            const rating = document.createElement("h6")
+            rating.innerHTML = "Rating - " + Element.rating + " ⭐⭐";
+
+            const offerprice = document.createElement("h5")
+            offerprice.innerHTML = "Deal Price - ₹" + Element.offerprice;
+
+            let mrp = document.createElement("h6");
+            mrp.innerHTML = "M.R.P. - ₹" + Element.mrp;
+
+            let discount = document.createElement("h6");
+            discount.innerHTML = "You Save - ₹" + Number(Element.mrp - Element.offerprice);
+
+            let category = document.createElement("h6");
+            category.innerHTML = "Category - " + Element.category;
+
+            let remove = document.createElement("button")
+            let increment = document.createElement("button");
+            let decrement = document.createElement("button");
+            let quantity = document.createElement("span")
 
 
-        },
-        {
-            brand: "Vivo Y75 4G 128 GB, 8 GB RAM, Dancing Waves, Mobile Phone(492850352)",
-            price: "₹19,999.00",
-            image: "https://www.reliancedigital.in/medias/One-Plus-10T-Mobile-Phone-493177297-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMjc4NDd8aW1hZ2UvanBlZ3xpbWFnZXMvaDFiL2g4ZS85ODY5OTQ4MTU3OTgyLmpwZ3wwYzZmNTJkN2NmMTgzNDkzNjQ3YzQzNTg1ZWRmODYzMmFiMjhlYmE3ZjcyMzYzNmJmNDEyN2JiZWYzM2UwOGJk",
+            remove.innerText = "Remove";
+            increment.innerText = "+";
+            decrement.innerText = "-";
+            quantity.innerText = Element.quantity;
+
+            remove.addEventListener("click", function () {        //remove
+                LSdata.splice(i, 1)
+                localStorage.setItem("degitalProduct", JSON.stringify(LSdata))
+                Display_product()
+            })
+            increment.addEventListener("click", function () {       //increment
+                Element.quantity++
+
+                localStorage.setItem("degitalProduct", JSON.stringify(LSdata))
+                Display_product()
+
+            })
+
+            decrement.addEventListener("click", function () {     //decrement
+                Element.quantity--
+
+                localStorage.setItem("cart", JSON.stringify(LSdata))
+                Display_product()
+
+            })
+            card.append(image, title, brand, rating, offerprice, mrp, discount, category, remove,
+                increment, quantity, decrement);
+            all_iteams.append(card);
 
 
-        },
-        {
-
-            brand: "Apple iPhone 14 128 GB, Blue(493177752)",
-            price: " ₹74,900.00",
-            image: "https://www.reliancedigital.in/medias/Apple-iPhone-14-Mobile-Phone-493177752-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2OTU0M3xpbWFnZS9qcGVnfGltYWdlcy9oZTYvaDZlLzk4OTA0ODYzMjExODIuanBnfDY3ZWRlZDE0YjBhMzJmMzk3MTBjNzUxNzk1NDJlN2I4YWQwZGRiMmU1MDYzYjY3NzNmNWViMmZmOWU2NzE1YzM"
-
-
-        }
-
-    ]
-
-    const container = document.getElementById("container");
-    let LSdata = JSON.parse(localStorage.getItem("degitalProduct")) || []
-
-
-    for (i = 0; i < ProductData.length; i++) {
-        const card = document.createElement("div");
-
-
-        const image = document.createElement("img")
-        image.src = ProductData[i].image
-        const brand = document.createElement("h5");
-        const price = document.createElement("h6")
-
-
-        brand.innerText = ProductData[i].brand;
-        price.innerText = ProductData[i].price;
-        let addtoCart = document.createElement("button");
-        addtoCart.innerText = "cart"
-
-        addtoCart.addEventListener("click", function () {
-            LSdata.push(ProductData[i])
-
-            localStorage.setItem("degitalProduct", JSON.stringify(LSdata));
-            alert("Product Added")
         })
 
 
-        card.append(image, brand, price, addtoCart);
-        container.append(card)
+        let total = document.getElementById("cart-total");
+
+        let sum = 0;
+        for (let i = 0; i < LSdata.length; i++) {
+            sum += LSdata[i].quantity * LSdata[i].mrp;
+        }
+        total.innerText = sum;
     }
+    Display_product()
+
+
+
+
+
 </script>
 
 </html>

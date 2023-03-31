@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login and Registration Page</title>
+</head>
+<body>
+	<h1>Login</h1>
+	<form id="login-form">
+		<label>Username:</label>
+		<input type="text" name="username">
+		<label>Password:</label>
+		<input type="password" name="password">
+		<button type="submit">Login</button>
+	</form>
+
+	<h1>Registration</h1>
+	<form id="register-form">
+		<label>Username:</label>
+		<input type="text" name="username">
+		<label>Password:</label>
+		<input type="password" name="password">
+		<button type="submit">Register</button>
+	</form>
+
+	<script>
+		// Check if the user is already registered on page load
+		window.onload = function() {
+			var storedUser = localStorage.getItem("user");
+			if (storedUser !== null) {
+				alert("Welcome back, " + storedUser + "!");
+			}
+		}
+
+		// Handle login form submission
+		document.getElementById("login-form").addEventListener("submit", function(event) {
+			event.preventDefault();
+			var username = event.target.elements.username.value;
+			var password = event.target.elements.password.value;
+			var storedUser = localStorage.getItem("user");
+			var storedPassword = localStorage.getItem("password");
+			if (username === storedUser && password === storedPassword) {
+				alert("Login successful!");
+			} else {
+				alert("Incorrect username or password.");
+			}
+		});
+
+		// Handle registration form submission
+		document.getElementById("register-form").addEventListener("submit", function(event) {
+			event.preventDefault();
+			var username = event.target.elements.username.value;
+			var password = event.target.elements.password.value;
+			var storedUser = localStorage.getItem("user");
+			if (storedUser === null) {
+				localStorage.setItem("user", username);
+				localStorage.setItem("password", password);
+				alert("Registration successful!");
+			} else {
+				alert("User already registered.");
+			}
+		});
+	</script>
+</body>
+</html>
