@@ -273,3 +273,15 @@ for (i = 0; i < produt.length; i++) {
 
 
 }
+
+
+// search function..
+const searchiteam = () => {
+  const iteams = document.getElementById("audioContainer");
+}
+
+
+// Current branch(day-4) > push all the updates
+// make new folder on desktop and copy all the files from day-4 branch(vs code)
+// open main branch on vs code and delete any existing files from it, also push it to github
+// paste the files from the new folder to the main branch and push again
