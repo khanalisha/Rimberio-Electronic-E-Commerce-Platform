@@ -275,10 +275,6 @@ for (i = 0; i < produt.length; i++) {
 }
 
 
-// search function..
-const searchiteam = () => {
-  const iteams = document.getElementById("audioContainer");
-}
 
 
 // Current branch(day-4) > push all the updates
