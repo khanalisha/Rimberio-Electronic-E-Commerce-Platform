@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smart phone</title>
+    <style>
+        /* nav bar*/
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #navMain {
+            /* border: 2px solid purple; */
+            background-color: #FF0000;
+            height: 150px;
+
+
+        }
+
+
+        #nav1 {
+            /* border: 2px solid yellow; */
+            height: 150px;
+
+            background-color: #FF0000;
+        }
+
+        #logo_search {
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin-top: 30px; */
+            position: relative;
+            bottom: -50px;
+            margin-right: 20%;
+            height: 50px;
+
+
+        }
+
+        .logo img {
+            /* border: #312E81 2px solid ; */
+            margin-right: 300px;
+            width: 150px;
+        }
+
+
+        input[type="text"] {
+
+            width: 40%;
+            height: 35px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 1vw 12px;
+            background-color: #fff;
+            border-color: #fff;
+
+        }
+
+        #side1 {
+            /* border: 2px solid black; */
+            margin-left: 70%;
+
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            position: relative;
+            top: -35px;
+
+
+
+
+        }
+
+        #side1 ul {
+            list-style: none;
+
+        }
+
+        #side1 ul a {
+            color: #fff;
+            font-family: Arial;
+            font-size: 15px;
+            text-decoration: none;
+
+        }
+
+
+        #side2 ul {
+            list-style: none;
+        }
+
+        #side2 {
+            /* border: 2px solid black; */
+            margin-left: 70%;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            position: relative;
+            top: -25px;
+        }
+
+        #side2 ul a {
+            color: #fff;
+            font-family: Arial;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        #menu {
+
+            /* border: 2px solid green; */
+            height: 60px;
+            width: 100%;
+
+            position: absolute;
+            top: 119px;
+            background-color: #312E81;
+            left: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+
+
+        }
+
+        #menu ul {
+            list-style: none;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            float: left;
+        }
+
+        #menu>ul a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 32px;
+            padding: 0 15px;
+            font-weight: bold;
+            display: block;
+
+
+
+        }
+
+        #menu ul li {
+
+            float: left;
+            position: relative;
+            margin: 0 20px;
+            padding: -5 3px;
+        }
+
+        #menu ul li:hover {
+            background-color: #FF0000;
+        }
+
+        #menu ul ul {
+
+            position: absolute;
+            background-color: #4338CA;
+            top: 100%;
+            left: 0;
+            display: none;
+        }
+
+        #menu ul ul li {
+            float: none;
+            width: 1000px;
+        }
+
+        #menu ul ul ul {
+            top: 0px;
+            left: 100%;
+        }
+
+        #menu ul li:hover>ul {
+            display: block;
+        }
+
+        #menu ul li:hover>ul li {
+            background-color: #4338CA;
+        }
+
+        /* #slideshow {
+            width: 500px;
+        }
+
+        #slideshow img {
+            width: 400%;
+        } */
+
+        /* middle section */
+
+        #container {
+            /* border: 2px solid red; */
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            justify-content: space-between;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-top: 30px;
+            margin-top: 30px;
+
+
+        }
+
+        #container>div {
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+
+        }
+
+        img {
+            width: 200px;
+        }
+
+        /* #ViewBtn{
+            border: 3px solid red;
+            position:absolute;
+            top: -3; 
+
+        }
+        #ViewBtn button {
+            background-color:#4338CA;
+            color: #f0f8ff;
+            height: 22px;
+            border-radius: 8%;
+            border-color: #4338CA;
+        } */
+        button {
+            display: block;
+            font-size: 20px;
+            padding: 10px 20px;
+            /* border: 0; */
+            border-radius: 5px;
+            margin: 5px auto;
+            background-color: #e01e1e;
+            border-color: #f00f0f;
+            color: #fff;
+
+        }
+
+        /* footer */
+
+        #footer {
+            /* border: blue solid 4px; */
+            background-color: rgb(40, 40, 138);
+            ;
+        }
+
+        #footerAll {
+            /* border: green solid 4px; */
+            justify-content: space-evenly;
+        }
+
+        #section1 {
+            /* border: pink solid 4px; */
+            margin-right: 20px;
+            margin-left: 40px;
+        }
+
+        /* #section1 #box{
+    /* border: 2px solid #312E81; */
+        /* } */
+        #footerAll {
+            display: flex;
+        }
+
+        #section2 {
+            /* border: rgb(148, 29, 49) solid 4px; */
+            margin-right: 20px;
+            margin-left: 40px;
+        }
+
+        #section3 {
+            /* border: rgb(206, 24, 54) solid 4px; */
+            margin-right: 20px;
+            margin-left: 40px;
+            margin-bottom: 100px;
+        }
+
+        #section4 {
+            /* border: rgb(49, 29, 148) solid 4px; */
+            margin-right: 20px;
+            margin-left: 40px;
+        }
+
+        .downFooter1 {
+            /* border:black 2px solid; */
+            width: 150px;
+            margin-left: 110px;
+            margin-bottom: 100px;
+
+
+        }
+
+        .downFooter {
+            /* border:black 2px solid; */
+            display: flex;
+
+        }
+
+        .downFooter4 {
+            /* border:green 2px solid; */
+            width: 300px;
+            margin-left: 270px;
+            padding-top: 0;
+
+            margin-bottom: 30px;
+
+        }
+
+        #section4 #box4 ul li a {
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 32px;
+
+            font-family: Roboto, "system-ui", sans-serif;
+            font-weight: 400px;
+            color: #fff;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #section1 #box1 ul li a {
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 32px;
+
+            font-family: Roboto, "system-ui", sans-serif;
+            font-weight: 400px;
+            color: #fff;
+
+        }
+
+        #section2 #box2 ul li a {
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 32px;
+            color: #fff;
+
+            font-family: Roboto, "system-ui", sans-serif;
+            font-weight: 400px;
+        }
+
+        #section3 #box3 ul li a {
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 32px;
+            color: #fff;
+
+            font-family: Roboto, "system-ui", sans-serif;
+            font-weight: 400px;
+        }
+
+        #heading1 {
+            margin-left: 40px;
+
+        }
+
+        #heading1 h3 {
+            color: #fff;
+            ;
+
+
+        }
+
+        #heading2 {
+            margin-left: 40px;
+        }
+
+        #heading2 h3 {
+            color: #fff;
+            ;
+
+
+        }
+
+        #heading3 h3 {
+            color: #fff;
+            ;
+
+
+        }
+
+        #heading4 h3 {
+            color: #fff;
+            ;
+
+
+        }
+
+        #heading4 {
+            margin-left: 40px;
+        }
+
+        .downFooter2 h3 {
+            color: #fff;
+        }
+
+        .downFooter5 h3 {
+            color: #fff;
+        }
+
+        .endpage {
+            /* border:2px solid red; */
+            height: 150px;
+            background-color: #005792;
+            position: relative;
+            top: -20px;
+        }
+
+        .endpage p {
+            text-align: center;
+            line-height: 17px;
+            color: #fff;
+        }
+
+        .ending p {
+            text-align: center;
+            color: #fff;
+
+        }
+
+        .ending {
+
+            /* border:2px solid red; */
+            background-color: #005792;
+
+            position: relative;
+            top: -20px;
+            height: 50px;
+        }
+
+        .ending .endingA {
+            background-color: #005792;
+            /* border:2px solid yellow; */
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navMain">
+        <div id="nav1">
+
+            <div id="logo_search">
+
+                <div class="logo"><img src="./main logo.png" alt=""></div>
+
+                <input placeholder="Find your favorite products" type="text" id="search">
+            </div>
+
+            <div id="side1">
+                <ul>
+                    <li><a href="">Find a store |</a>
+                        <a href="">Buying guides |</a>
+                        <a href="">Contact us |</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="side2">
+                <ul>
+                    <li><a href="">Select your Pin Code|</a>
+                        <a href="./cart.html">🛒Cart |</a>
+                        <a href="">👤Login |</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li><a href="#">MOBILES & TABLETS</a>
+                        <ul>
+                            <li><a href="/MobSmart.html">Smartphones</a></li>
+                            <li><a href="#">Smartwatches</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="">Tablet Accessories</a></li>
+                            <li><a href="#">Mobile Accessories</a></li>
+                            <li><a href="#">Mobile Grips & Stands</a></li>
+                            <li><a href="#">Headphones & Headsets</a></li>
+
+
+
+                        </ul>
+                    </li>
+                    <li><a href="#">TELEVISIONS</a>
+                        <ul>
+                            <li><a href="#">Smart TVs</a></li>
+                            <li><a href="#">32 Inch TVs</a></li>
+                            <li><a href="#">43 Inch TVs</a></li>
+                            <li><a href="#">Gaming</a></li>
+                            <li><a href="#">Gaming Consoles</a></li>
+                            <li><a href="#">Gaming Titles</a></li>
+                            <li><a href="#">Gaming Titles</a></li>
+
+
+
+
+
+
+
+                        </ul>
+                    </li>
+                    <li><a href="#">AUDIO </a>
+                        <ul>
+                            <li><a href="">Headphones & Headsets</a></li>
+                            <li><a href="#">True Wireless</a></li>
+                            <li><a href="#">Bluetooth Neckbands</a></li>
+                            <li><a href="#">Bluetooth & WiFi Speakers</a></li>
+                            <li><a href="#"> Bluetooth Speakers</a></li>
+                            <li><a href="#"> Smart Speakers</a></li>
+                            <li><a href="#">TV Speakers & Soundbars</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li><a href="#">HOME APPLIANCES</a>
+                        <ul>
+                            <li><a href="#">Air Conditioners</a></li>
+                            <li><a href="#">Split Air Conditioners</a></li>
+                            <li><a href="#"> Window Air Conditioners</a></li>
+                            <li><a href="#"> Energy Efficient Air Conditioners</a></li>
+                            <li><a href="#"> 1 ton Air Conditioners</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">COMPUTER</a>
+                        <ul>
+                            <li><a href="#">Laptops</a></li>
+                            <li><a href="#">Bluetooth & WiFi Speakers</a></li>
+                            <li><a href="#"> Internet Connectivity Devices</a></li>
+                            <li><a href="#">Routers</a></li>
+                            <li><a href="#">Computer Accessories</a></li>
+                            <li><a href="#"> Upto 72% Off, Only on Reliancedigital.in</a></li>
+                            <li><a href="#">Computer Networking Cables</a></li>
+
+
+
+                        </ul>
+                    </li>
+                    <li><a href="#">CAMERAS</a>
+                        <ul>
+                            <li><a href="#">DSLR Cameras</a></li>
+                            <li><a href="#">Mirrorless Cameras</a></li>
+                            <li><a href="#"> Point & Shoot Cameras</a></li>
+                            <li><a href="#">ProSumer Camera</a></li>
+                            <li><a href="#"> Photo Storage Devices</a></li>
+                            <li><a href="#"> Action Cameras</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">PERSONAL CARE</a>
+                        <ul>
+                            <li><a href="#">Shavers & Trimmers</a></li>
+                            <li><a href="#"> Epilators</a></li>
+                            <li><a href="#"> Hair Dryers & Stylers</a></li>
+                            <li><a href="#">Reconnect Disney|Marvel Grooming Collection</a></li>
+                            <li><a href="#"> Hygiene & Personal Care</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">ACCESSORIES</a>
+                        <ul>
+                            <li><a href="#">Bags, Cases & Sleeves</a></li>
+                            <li><a href="#">Smart Devices</a></li>
+                            <li><a href="#"> Smart Cameras</a></li>
+                            <li><a href="#">Batteries</a></li>
+                            <li><a href="#">Power Banks</a></li>
+                            <li><a href="#">Cables & Cords</a></li>
+                            <li><a href="#">Headphones & Headsets</a></li>
+                            <li><a href="#"> Cleaners & Protectors</a></li>
+                            <li><a href="#">Chargers & Adapters</a></li>
+
+                        </ul>
+                    </li>
+                    <!-- </li> -->
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- <div id="ViewBtn"> 
+        <h2>Best Camera Mobile</2><button>View all</button> -->
+    <!-- 
+    </div> -->
+    <div id="container"></div>
+
+
+    <!-- about relience degital -->
+    <div id="footer">
+        <div id="footerAll">
+            <div id="section1">
+                <div id="heading1">
+                    <h3>PRODUCT <br> CATEGORIES</h3>
+                </div>
+                <div id="box1">
+                    <ul>
+                        <li><a href="">Smartphones</a></li>
+                        <li><a href="">Laptops</a></li>
+                        <li><a href="">DSLR Cameras</a></li>
+                        <li><a href="">Televisions</a></li>
+                        <li><a href="">Air Conditioners</a></li>
+                        <li><a href="">Refrigerators</a></li>
+                        <li><a href="">Kitchen Appliances</a></li>
+                        <li><a href="">Laptops</a></li>
+                        <li><a href="">Accessories</a></li>
+                        <li><a href="">Personal Care & Grooming</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section2">
+                <div id="heading2">
+                    <h3>SITE INFO</h3>
+                </div>
+                <div id="box2">
+                    <ul>
+                        <li><a href="">About Reliance Digital</a></li>
+                        <li><a href=""> resQ Services</a></li>
+                        <li><a href="">Site Map</a></li>
+                        <li><a href="">Gift Cards</a></li>
+                        <li><a href="">Corporate Enquires</a></li>
+                        <li><a href=""> Contact Us</a></li>
+                        <li><a href="">Kitchen Appliances</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section3">
+                <div id="heading3">
+                    <h3>RESOURCE CENTRE</h3>
+                </div>
+                <div id="box3">
+                    <ul>
+                        <li><a href="">Product Reviews</a></li>
+                        <li><a href="">Buying Guides</a></li>
+                        <li><a href="">How Tos</a></li>
+                        <li><a href="">Featured Stories</a></li>
+                        <li><a href="">Events & Happenings</a></li>
+                        <li><a href="">Nearest Store</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section4">
+                <div id="heading4">
+                    <h3>POLICIES</h3>
+                </div>
+                <div id="box4">
+                    <ul>
+                        <li><a href="">Terms of Use</a></li>
+                        <li><a href=""> FAQs</a></li>
+                        <li><a href=""> Cancellation and</a></li>
+                        <li><a href="">Return Policy</a></li>
+                        <li><a href="">Shipping and</a></li>
+                        <li><a href="">Delivery Policy</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href=""> E-waste Recycling </a></li>
+                        <li><a href="">Policy</a></li>
+                        <li><a href=""> EMI and Additional</a></li>
+                        <li><a href="">Cashback T&C</a></li>
+                        <li><a href=""> RelianceOne Loyalty</a> </a></li>
+                        <li><a href=""> Program T&C</a></li>
+                        <li><a href="">Caution Notice</a></li>
+                        <li><a href=""> FOLLOW US</a></li>
+                        <li><a href=""> EXPERIENCE RELIANCE DIGITAL</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="downFooter">
+            <div class="downFooter1">
+                <div class="downFooter2">
+                    <h3>FOLLOW US</h3>
+                </div>
+                <div class="downFooter3">
+                    <img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" style=width:40px ;>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3621/3621473.png" alt="" style=width:40px ;>
+                    <img src="https://cdn-icons-png.flaticon.com/128/152/152810.png" alt="" style=width:30px ;>
+                </div>
+
+            </div>
+
+
+
+            <div class="downFooter4">
+                <div class="downFooter5">
+                    <h3>
+                        EXPERIENCE RELIANCE DIGITAL <br> APP ON MOBILE</h3>
+                </div>
+                <div class="downFooter6"></div>
+                <img src="https://www.reliancedigital.in/build/client/images/google_play_store.png" alt=""
+                    style=width:90px>
+                <img src="https://www.reliancedigital.in/build/client/images/ios_app_store_icon.png" alt=""
+                    style="width: 90px;">
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="endpage">
+        <p style="text-decoration:underline white;">Disclaimer</p>
+
+        <p>Product prices, offers and availability are subject to change from time to time. All prices are inclusive of
+            taxes. Product colours & images are only for illustration and they may not exactly match with the actual
+            product. <br> Product specs are subject to change & may vary from actual product. While every care is taken
+            to avoid inaccuracies in content, these are provided <br> as is, without warranty of any kind.</p>
+
+    </div>
+    <div class="ending">
+        <div class="endingA">
+            <span style="text-align: center;"> © 2023 Reliance Digital. All Rights Reserved.</span>
+        </div>
+    </div>
+
+</body>
+<script>
+    const ProductData = [
+        {
+            brand: "Motorola G62 5G 128 GB, 6 GB RAM, Midnight Grey, Mobile Phone(493177198)",
+            price: "₹15,999.00",
+            image: "https://www.reliancedigital.in/medias/Motorola-G62-Mobile-Phone-493177198-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w4NTk1NHxpbWFnZS9qcGVnfGltYWdlcy9oMzYvaDE1Lzk4NzMyNjQ5MDIxNzQuanBnfDc5MmFmYTVlODc2MjE2NjE3NzIzZWIxNjkzNGNjY2QxZjA5MDVmMWYzODcyMGFhOGE2YTJkMjQ4MjQxMmY4N2U"
+
+
+        },
+        {
+            brand: "OnePlus 10T 5G 128 GB, 8 GB RAM, Moonstone Black, Mobile Phone(493177297)",
+            price: " ₹44,999.00",
+            image: "https://www.reliancedigital.in/medias/One-Plus-10T-Mobile-Phone-493177297-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMjc4NDd8aW1hZ2UvanBlZ3xpbWFnZXMvaDFiL2g4ZS85ODY5OTQ4MTU3OTgyLmpwZ3wwYzZmNTJkN2NmMTgzNDkzNjQ3YzQzNTg1ZWRmODYzMmFiMjhlYmE3ZjcyMzYzNmJmNDEyN2JiZWYzM2UwOGJk",
+
+
+        },
+        {
+            brand: "Oppo A57 64GB, 4GB RAM, Glowing Green, Mobile Phone(492850647)",
+            price: "₹13,999.00",
+            image: "https://www.reliancedigital.in/medias/Oppo-CPH2357-Smart-Phones-492850896-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMjcwODF8aW1hZ2UvanBlZ3xpbWFnZXMvaDZmL2hiOS85ODgyMTY3NzA1NjMwLmpwZ3xmYTIyZWM5MGFkZjc0ZGRjYTBjNzc3MWYxMTZlZDFiZmQ5NzZmNTMzNTY5OWVjZjQxYWE4NjFhOTg3OTQ4N2M0"
+
+
+        },
+        {
+            brand: "Vivo Y75 4G 128 GB, 8 GB RAM, Dancing Waves, Mobile Phone(492850352)",
+            price: "₹19,999.00",
+            image: "https://www.reliancedigital.in/medias/One-Plus-10T-Mobile-Phone-493177297-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMjc4NDd8aW1hZ2UvanBlZ3xpbWFnZXMvaDFiL2g4ZS85ODY5OTQ4MTU3OTgyLmpwZ3wwYzZmNTJkN2NmMTgzNDkzNjQ3YzQzNTg1ZWRmODYzMmFiMjhlYmE3ZjcyMzYzNmJmNDEyN2JiZWYzM2UwOGJk",
+
+
+        },
+        {
+
+            brand: "Apple iPhone 14 128 GB, Blue(493177752)",
+            price: " ₹74,900.00",
+            image: "https://www.reliancedigital.in/medias/Apple-iPhone-14-Mobile-Phone-493177752-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2OTU0M3xpbWFnZS9qcGVnfGltYWdlcy9oZTYvaDZlLzk4OTA0ODYzMjExODIuanBnfDY3ZWRlZDE0YjBhMzJmMzk3MTBjNzUxNzk1NDJlN2I4YWQwZGRiMmU1MDYzYjY3NzNmNWViMmZmOWU2NzE1YzM"
+
+
+        }
+
+    ]
+
+    const container = document.getElementById("container");
+    let LSdata = JSON.parse(localStorage.getItem("degitalProduct")) || []
+
+
+    for (i = 0; i < ProductData.length; i++) {
+        const card = document.createElement("div");
+
+
+        const image = document.createElement("img")
+        image.src = ProductData[i].image
+        const brand = document.createElement("h5");
+        const price = document.createElement("h6")
+
+
+        brand.innerText = ProductData[i].brand;
+        price.innerText = ProductData[i].price;
+        let addtoCart = document.createElement("button");
+        addtoCart.innerText = "cart"
+
+        addtoCart.addEventListener("click", function () {
+            LSdata.push(ProductData[i])
+
+            localStorage.setItem("degitalProduct", JSON.stringify(LSdata));
+            alert("Product Added")
+        })
+
+
+        card.append(image, brand, price, addtoCart);
+        container.append(card)
+    }
+</script>
+
+</html>
