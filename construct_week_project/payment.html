@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file link  -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #navMain {
+            /* border: 2px solid purple; */
+            background-color: #FF0000;
+            height: 150px;
+
+
+        }
+
+
+        #nav1 {
+            /* border: 2px solid yellow; */
+            height: 150px;
+
+            background-color: #FF0000;
+        }
+
+        #logo_search {
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin-top: 30px; */
+            position: relative;
+            bottom: -50px;
+            margin-right: 20%;
+            height: 50px;
+
+
+        }
+
+        .logo img {
+            /* border: #312E81 2px solid ; */
+            margin-right: 300px;
+            width: 150px;
+        }
+
+
+        input[type="text"] {
+
+            width: 40%;
+            height: 35px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 1vw 12px;
+            background-color: #fff;
+            border-color: #fff;
+
+        }
+
+        #side1 {
+            /* border: 2px solid black; */
+            margin-left: 70%;
+
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            position: relative;
+            top: -35px;
+
+
+
+
+        }
+
+        #side1 ul {
+            list-style: none;
+
+        }
+
+        #side1 ul a {
+            color: #fff;
+            font-family: Arial;
+            font-size: 15px;
+            text-decoration: none;
+
+        }
+
+
+        #side2 ul {
+            list-style: none;
+        }
+
+        #side2 {
+            /* border: 2px solid black; */
+            margin-left: 70%;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            position: relative;
+            top: -25px;
+        }
+
+        #side2 ul a {
+            color: #fff;
+            font-family: Arial;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        #menu {
+
+            /* border: 2px solid green; */
+            height: 60px;
+            width: 100%;
+
+            position: absolute;
+            top: 119px;
+            background-color: #312E81;
+            left: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+
+
+        }
+
+        #menu ul {
+            list-style: none;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            float: left;
+        }
+
+        #menu>ul a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 32px;
+            padding: 0 15px;
+            font-weight: bold;
+            display: block;
+
+
+
+        }
+
+        #menu ul li {
+
+            float: left;
+            position: relative;
+            margin: 0 20px;
+            padding: -5 3px;
+        }
+
+        #menu ul li:hover {
+            background-color: #FF0000;
+        }
+
+        #menu ul ul {
+
+            position: absolute;
+            background-color: #4338CA;
+            top: 100%;
+            left: 0;
+            display: none;
+        }
+
+        #menu ul ul li {
+            float: none;
+            width: 1000px;
+        }
+
+        #menu ul ul ul {
+            top: 0px;
+            left: 100%;
+        }
+
+        #menu ul li:hover>ul {
+            display: block;
+        }
+
+        #menu ul li:hover>ul li {
+            background-color: #4338CA;
+        }
+
+        /* kk */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            min-height: 100vh;
+            background: linear-gradient(90deg, white);
+        }
+
+        .container form {
+            padding: 20px;
+            width: 700px;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+        }
+
+        .container form .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .container form .row .col {
+            flex: 1 1 250px;
+        }
+
+        .container form .row .col .title {
+            font-size: 20px;
+            color: #333;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .container form .row .col .inputBox {
+            margin: 15px 0;
+        }
+
+        .container form .row .col .inputBox span {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .container form .row .col .inputBox input {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            font-size: 15px;
+            text-transform: none;
+        }
+
+        .container form .row .col .inputBox input:focus {
+            border: 1px solid #000;
+        }
+
+        .container form .row .col .flexx {
+            display: flex;
+            gap: 15px;
+        }
+
+        .container form .row .col .flexx .inputBox {
+            margin-top: 5px;
+        }
+
+        .container form .row .col .inputBox img {
+            height: 34px;
+            margin-top: 5px;
+            filter: drop-shadow(0 0 1px #000);
+        }
+
+        .container form .submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 17px;
+            background: #FF0000;
+            color: #fff;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .container form .submit-btn:hover {
+            background: #312E81;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="navMain">
+        <div id="nav1">
+
+            <div id="logo_search">
+
+                <div class="logo"><img src="./main logo.png" alt=""></div>
+
+                <input placeholder="Find your favorite products" type="text" id="search">
+            </div>
+
+            <div id="side1">
+                <ul>
+                    <li><a href="">Find a store |</a>
+                        <a href="">Buying guides |</a>
+                        <a href="">Contact us |</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="side2">
+                <ul>
+                    <li><a href="">Select your Pin Code|</a>
+                        <a href="./cart.html">🛒Cart |</a>
+                        <a href="">👤Login |</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- payment -->
+
+    <div class="container">
+
+        <form action="">
+
+            <div class="row">
+
+                <div class="col">
+
+                    <h3 class="title">billing address</h3>
+
+                    <div class="inputBox">
+                        <span>full name :</span>
+                        <input type="text" placeholder="gohan deo">
+                    </div>
+                    <div class="inputBox">
+                        <span>email :</span>
+                        <input type="email" placeholder="example@example.com">
+                    </div>
+                    <div class="inputBox">
+                        <span>address :</span>
+                        <input type="text" placeholder=" street - locality">
+                    </div>
+                    <div class="inputBox">
+                        <span>city :</span>
+                        <input type="text" placeholder="Delhi">
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>state :</span>
+                            <input type="text" placeholder="india">
+                        </div>
+                        <div class="inputBox">
+                            <span>zip code :</span>
+                            <input type="text" placeholder="123 456">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <h3 class="title">payment</h3>
+
+                    <div class="inputBox">
+                        <span>cards accepted :</span>
+                        <img src="card_img.png" alt="">
+                    </div>
+                    <div class="inputBox">
+                        <span>name on card :</span>
+                        <input type="text" placeholder="mr. gohan deo">
+                    </div>
+                    <div class="inputBox">
+                        <span>credit card number :</span>
+                        <input type="number" placeholder="1111-2222-3333-4444">
+                    </div>
+                    <div class="inputBox">
+                        <span>exp month :</span>
+                        <input type="text" placeholder="May">
+                    </div>
+
+                    <div class="flexx">
+                        <div class="inputBox">
+                            <span>exp year :</span>
+                            <input type="number" placeholder="2022">
+                        </div>
+                        <div class="inputBox">
+                            <span>CVV :</span>
+                            <input type="text" placeholder="1234">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <input type="submit" value="proceed to checkout" class="submit-btn">
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
